@@ -1,8 +1,8 @@
 pragma solidity 0.6.12;
 pragma experimental ABIEncoderV2;
 
-import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import "@openzeppelin/contracts/token/ERC20/SafeERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";    //Any problems with IERC20.sol and not BEP20?
+import "@openzeppelin/contracts/token/ERC20/SafeERC20.sol"; //Any problems with ERC20.sol and not BEP20?
 import "@openzeppelin/contracts/math/SafeMath.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
@@ -13,12 +13,12 @@ import "./LotteryNFT.sol";
 // 4 numbers
 contract Lottery is Ownable {
     using SafeMath for uint256;
-    using SafeERC20 for IERC20;
+    using SafeERC20 for IERC20; //Any problems with ERC20.sol and not BEP20?
 
     // Allocation for first/sencond/third reward
     uint256[] private allocation = [60, 20, 10];
     // The TOKEN to buy lottery
-    IERC20 public cake;
+    IERC20 public cake; //Any problems with IERC20.sol and not BEP20?
     // The Lottery NFT for tickets
     LotteryNFT public lotteryNtf;
     // adminAddress
@@ -51,7 +51,7 @@ contract Lottery is Ownable {
     event Reset(uint256 indexed issueIndex);
 
     constructor(
-        IERC20 _cake,
+        IERC20 _cake,   //Any problems with IERC20.sol and not BEP20?
         LotteryNFT _lottery,
         uint256 _maxNumber,
         address _adminAddress
